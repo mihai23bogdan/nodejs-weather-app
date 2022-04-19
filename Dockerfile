@@ -1,6 +1,7 @@
 FROM node:10-alpine
-RUN npm install
+WORKDIR /app
+COPY app/package*.json ./
+RUN npm install -g
 COPY . .
 EXPOSE 5000
-EXPOSE 3000
-CMD ["node", "server.js"]
+CMD ["node", "app/server.js"]
