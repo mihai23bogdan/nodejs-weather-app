@@ -17,7 +17,7 @@ pipeline {
         } 
      stage ('run') {
            steps { 
-               sh "docker run -d --name ${dockercontainer}${BUILD_NUMBER} ${dockerimage}:${BUILD_NUMBER}"
+               sh "docker run -d -p 5000:5000 --name ${dockercontainer}${BUILD_NUMBER} ${dockerimage}:${BUILD_NUMBER}"
            }
         }   
     }
