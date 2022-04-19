@@ -7,7 +7,7 @@ pipeline {
     stages {
       stage('Git Clone') {
         steps{
-          git url:'https://github.com/mihai23bogdan/node-webapp1', branch: 'master'
+          git url:'https://github.com/mihai23bogdan/nodejs-weather-app', branch: 'master'
         }
     }
     stage ('build') {
