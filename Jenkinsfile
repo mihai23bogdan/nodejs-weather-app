@@ -4,9 +4,6 @@ pipeline {
         dockerimage = "nodeappp"
         dockercontainer = "node.jss"
     }
-       parameters {
-          string(name: 'PORT', defaultValue: '', description: 'Port number')
-          }
     stages {
       stage('Git Clone') {
         steps{
@@ -20,7 +17,7 @@ pipeline {
         } 
      stage ('run') {
            steps { 
-               sh "docker run -d -p ${params.PORT}:3000 --name ${dockercontainer}${BUILD_NUMBER} ${dockerimage}:${BUILD_NUMBER}"
+               sh "docker run -d --name ${dockercontainer}${BUILD_NUMBER} ${dockerimage}:${BUILD_NUMBER}"
            }
         }   
     }
