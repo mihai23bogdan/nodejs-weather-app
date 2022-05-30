@@ -1,8 +1,8 @@
 FROM node:10-alpine
-RUN npm install
-RUN npm install request
-RUN npm install express
-RUN npm install ejs
 COPY . .
 EXPOSE 3000
+RUN npm install &&\
+    npm install request &&\
+    npm install express &&\
+    npm install ejs
 CMD ["node", "server.js"]
