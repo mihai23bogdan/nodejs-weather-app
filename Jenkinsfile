@@ -21,7 +21,7 @@ pipeline {
      stage ('run') {
            steps { 
                sh "docker run -d -p ${params.PORT}:3000 --name ${dockercontainer}${BUILD_NUMBER} ${dockerimage}:${BUILD_NUMBER}"
-               sh "npm publish --registry http://192.168.172.145:8081/artifactory/api/npm/Node-js-Local/
+               sh "npm publish --registry http://192.168.172.145:8081/artifactory/api/npm/Node-js-Local/"
            }
         }   
     }
